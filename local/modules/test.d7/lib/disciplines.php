@@ -1,10 +1,7 @@
 <?php
-namespace Mxdzqr\Disciplines;
+namespace Test\D7;
 
-use Bitrix\Main\ORM\Data\DataManager,
-    Bitrix\Main\ORM\Fields\IntegerField,
-    Bitrix\Main\ORM\Fields\StringField,
-    Bitrix\Main\ORM\Fields\Validators\LengthValidator;
+use \Bitrix\Main\Entity,
 
 /**
  * Class DisciplinesTable
@@ -18,7 +15,7 @@ use Bitrix\Main\ORM\Data\DataManager,
  * @package Bitrix\Disciplines
  **/
 
-class DisciplinesTable extends DataManager
+class DisciplinesTable extends Entity\DataManager
 {
     /**
      * Returns DB table name for entity.
@@ -38,32 +35,19 @@ class DisciplinesTable extends DataManager
     public static function getMap()
     {
         return [
-            new IntegerField(
-                'id',
+            new Entity\IntegerField(
+                'ID',
                 [
                     'primary' => true,
                     'autocomplete' => true,
                 ]
             ),
-            new StringField(
-                'name',
+            new Entity\StringField(
+                'NAME',
                 [
                     'required' => true,
-                    'validation' => [__CLASS__, 'validateName'],
                 ]
             ),
-        ];
-    }
-
-    /**
-     * Returns validators for name field.
-     *
-     * @return array
-     */
-    public static function validateName()
-    {
-        return [
-            new LengthValidator(null, 255),
         ];
     }
 }

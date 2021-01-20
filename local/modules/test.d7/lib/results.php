@@ -1,8 +1,7 @@
 <?php
-namespace Mxdzqr\Results;
+namespace Test\D7;
 
-use Bitrix\Main\ORM\Data\DataManager,
-    Bitrix\Main\ORM\Fields\IntegerField;
+use \Bitrix\Main\Entity,
 
 /**
  * Class ResultsTable
@@ -18,7 +17,7 @@ use Bitrix\Main\ORM\Data\DataManager,
  * @package Bitrix\Results
  **/
 
-class ResultsTable extends DataManager
+class ResultsTable extends Entity\DataManager
 {
     /**
      * Returns DB table name for entity.
@@ -38,26 +37,26 @@ class ResultsTable extends DataManager
     public static function getMap()
     {
         return [
-            new IntegerField(
+            new Entity\IntegerField(
                 'id',
                 [
                     'primary' => true,
                     'autocomplete' => true,
                 ]
             ),
-            new IntegerField(
+            new Entity\IntegerField(
                 'user_id',
                 [
                     'required' => true,
                 ]
             ),
-            new IntegerField(
+            new Entity\IntegerField(
                 'discipline_id',
                 [
                     'required' => true,
                 ]
             ),
-            new IntegerField(
+            new Entity\IntegerField(
                 'score',
                 [
                     'required' => true,

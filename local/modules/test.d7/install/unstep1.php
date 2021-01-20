@@ -9,7 +9,7 @@ Loc::loadMessages(__FILE__);
 ?>
 <form action="<?= $APPLICATION->GetCurPage() ?>">
     <input type="hidden" name="lang" value="<?= LANGUAGE_ID ?>">
-    <input type="hidden" name="id" value="mxdzqr.table">
+    <input type="hidden" name="id" value="test.d7">
     <input type="hidden" name="uninstall" value="Y">
     <input type="hidden" name="step" value="2">
     <?= CAdminMessage::ShowMessage(Loc::getMessage("MOD_UNINST_WARN")) ?>
