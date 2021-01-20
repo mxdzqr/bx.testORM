@@ -1,0 +1,7 @@
+bitrix/
+.cache/
+.git/
+.bash_history
+upload/
+local/components/mxdzqr/table.list/
+index.php
